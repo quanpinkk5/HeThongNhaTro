@@ -1,0 +1,608 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: #f4f6f9;
+  font-size: 14px;
+  color: #333;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #2c3e50;
+  color: #b8c7ce;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.sidebar-brand {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a2226;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  gap: 10px;
+  border-bottom: 1px solid #1a2226;
+}
+
+.sidebar-menu {
+  padding-top: 10px;
+  list-style: none;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #b8c7ce;
+  text-decoration: none;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+  transition: all 0.3s;
+}
+.menu-item:hover,
+.menu-item.active {
+  background-color: #1e282c;
+  color: white;
+  border-left-color: #3c8dbc;
+}
+
+/* Header cố định bên trên */
+header {
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  z-index: 999;
+}
+
+.header-left .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.root-page {
+  color: #3c8dbc;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.current-page {
+  color: #666;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.notify-box {
+  position: relative;
+  cursor: pointer;
+}
+.notify-box .badge {
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  background-color: #dd4b39;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: right;
+}
+.user-info .name {
+  display: block;
+  font-weight: 700;
+  color: #333;
+}
+.user-info .role {
+  font-size: 11px;
+  color: #999;
+  font-style: italic;
+}
+.user-info .avatar {
+  font-size: 30px;
+  color: #2c3e50;
+}
+
+.btn-logout {
+  background-color: #dd4b39;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+/* =========================================
+   3. MAIN CONTENT
+   ========================================= */
+.main-content {
+  margin-top: 60px;
+  margin-left: 250px;
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+}
+
+/* Action Bar */
+.action-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+.btn-add {
+  background-color: #00a65a;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-add:hover {
+  background-color: #008d4c;
+}
+
+/* Table Styles */
+.table-wrapper {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #3c8dbc;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin-table th {
+  background-color: #2189ff;
+  text-align: justify;
+  padding: 12px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+.admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+.admin-table tr:hover {
+  background-color: #f9f9f9;
+}
+.admin-table th:nth-child(7),
+.admin-table td:nth-child(7) {
+  text-align: center;
+}
+/* Cột dữ liệu */
+.col-username {
+  font-weight: 600;
+  color: #3c8dbc;
+}
+.col-role {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  /* text-align: center; */
+  font-weight: bold;
+  background-color: #eee;
+  color: #555;
+  text-transform: uppercase;
+}
+/* Style cho cột Email và Phone */
+.col-email,
+.col-phone {
+  color: #666;
+  font-family:
+    "Courier New", Courier, monospace; /* Giúp số và email dễ đọc hơn */
+}
+
+/* Nút chức năng */
+.btn-icon.view {
+  color: #3498db;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn-icon.view:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Nút chức năng trong bảng */
+.btn-icon {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  margin-right: 8px;
+}
+.btn-icon.edit {
+  color: #f39c12;
+}
+.btn-icon.unlock {
+  color: #f39c12;
+}
+.btn-icon.delete {
+  color: #dd4b39;
+}
+.btn-icon.delete:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+/* chi doc cua xem chi tiet */
+.readonly {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+}
+
+.role-highlight {
+  font-weight: bold;
+  color: #3c8dbc;
+}
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.alert.error {
+  background: #fdecea;
+  color: #c0392b;
+}
+
+.alert.success {
+  background: #e9f7ef;
+  color: #27ae60;
+}
+/* lọc thong tin */
+.filter-form {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-form input,
+.filter-form select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-filter {
+  background: #2d8cf0;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+/* ===== STATUS STYLE ===== */
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* ACTIVE - Xanh */
+.status.active {
+  background-color: #2ecc71;
+  color: white;
+}
+
+/* BLOCKED - Đỏ */
+.status.blocked {
+  background-color: #e74c3c;
+  color: white;
+}
+/* === status trong xem chi tiết === */
+.status-active {
+  background-color: #2ecc71;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status-blocked {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-reset {
+  padding: 6px 14px;
+  background: #ccc;
+  text-decoration: none;
+  color: black;
+  border-radius: 4px;
+}
+/* nền mờ  popup xác nhân   */
+.modalconfirm {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* hộp popup */
+.modalconfirm-content {
+  background: #fff;
+  padding: 25px;
+  width: 350px;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-confirm {
+  background: blue;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ====== Phân trang ======*/
+.pagination {
+  margin: 10px 15px 0 15px; /* trên – trái – dưới */
+  text-align: center;
+}
+#pagination {
+  margin: 10px 15px 0 15px; /* trên – trái – dưới */
+  text-align: center;
+}
+#pagination button {
+  /* width: 45px;
+  height: 45px;
+  margin: 5px;
+  border-radius: 50%;
+  border: none;
+  background-color: #3498db;
+  color: white; */
+  padding: 6px 12px;
+  margin: 0 2px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#pagination button.active {
+  background: #2d8cf0;
+  color: white;
+  border-color: #2d8cf0;
+}
+#pagination button:hover {
+  background-color: #2c3e50;
+  transform: scale(1.1);
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: 1px solid #ccc;
+  color: #333;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background: #2d8cf0;
+  color: white;
+  border-color: #2d8cf0;
+}
+
+.pagination a:hover {
+  background: #eee;
+}
+
+/* =========================================
+   4. MODAL (POPUP)
+   ========================================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  width: 500px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideIn 0.3s;
+}
+.modal-header {
+  background: #3c8dbc;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.close-btn {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.form-control,
+input,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d2d6de;
+  border-radius: 3px;
+  outline: none;
+}
+.form-control:focus,
+input:focus,
+select:focus {
+  border-color: #3c8dbc;
+}
+
+.modal-footer {
+  padding: 15px;
+  background: #f9f9f9;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+.btn-save {
+  background: #00a65a;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-cancel {
+  background: red;
+  color: #ffffff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Thêm đoạn này vào file CSS taikhoan.css */
+
+.btn-icon.view {
+  color: #3498db; /* Màu xanh dương cho nút Xem */
+}
+
+.btn-icon.view:hover {
+  color: #2980b9;
+}
+/* tieu de */
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+  color: #2c3e50;
+}
+
+.page-title i {
+  color: #2980b9;
+  font-size: 24px;
+}
+/* .page-title {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+} */

@@ -1,0 +1,122 @@
+:root {
+    --primary: #2563eb;
+    --text: #334155;
+    --bg: #f1f5f9;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+}
+
+.contract-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.no-print-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn-back, .btn-print {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-back { background: #fff; color: #64748b; }
+.btn-print { background: var(--primary); color: #fff; }
+
+.contract-paper {
+    background: #fff;
+    padding: 60px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    line-height: 1.6;
+}
+
+.contract-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contract-header h1 { font-size: 1.2rem; margin-bottom: 5px; }
+.contract-header h2 { font-size: 1.8rem; color: #000; margin-top: 20px; }
+.slogan { font-size: 0.9rem; font-weight: 600; margin-top: 0; }
+
+.divider {
+    width: 150px;
+    height: 2px;
+    background: #000;
+    margin: 10px auto;
+}
+
+.contract-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    font-size: 1.1rem;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.price-text {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.service-table th, .service-table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+}
+
+.service-table th { background: #f8fafc; }
+
+.contract-signature {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.sig-space { height: 100px; }
+.sig-sub { font-style: italic; font-size: 0.8rem; color: #94a3b8; }
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.badge.ACTIVE { background: #dcfce7; color: #166534; }
+
+@media print {
+    body { background: none; padding: 0; }
+    .no-print-actions { display: none; }
+    .contract-paper { box-shadow: none; padding: 0; }
+}

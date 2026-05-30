@@ -1,0 +1,316 @@
+/* Toolbar & Filter Styles */
+.toolbar-container {
+  background: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 3px solid #3c8dbc;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filter-item {
+  position: relative;
+}
+.filter-item i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+.filter-item input {
+  padding-left: 30px;
+  height: 38px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+}
+.filter-item input:focus {
+  border-color: #3c8dbc;
+}
+.filter-item select {
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.btn-add {
+  background: #00a65a;
+  color: white;
+  padding: 0 15px;
+  height: 38px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-warning {
+  background: #f39c12;
+  color: white;
+  padding: 0 15px;
+  height: 38px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.badge-count {
+  background: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+/* Table Styles */
+.table-container {
+  background: #fff;
+  border-radius: 4px;
+  overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.data-table th {
+  background: #7bc6f2;
+  padding: 12px;
+  text-align: left;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.room-tag {
+  background: #e3f2fd;
+  color: #3c8dbc;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.status-badge.active {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+.status-badge.warning {
+  background: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ffe0b2;
+}
+.status-badge.expired {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+.status-badge.ended {
+  background: #e9ecef;
+  color: #6c757d;
+  border: 1px solid #ced4da;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+.btn-view {
+  color: #3c8dbc;
+}
+.btn-renew {
+  color: #f39c12;
+}
+.btn-cancel-contract {
+  color: #dc3545;
+}
+.btn-icon[disabled] {
+  color: #ccc !important;
+  cursor: not-allowed;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  width: 600px;
+  border-radius: 6px;
+  overflow: hidden;
+  animation: slideDown 0.3s;
+}
+.modal-header {
+  background: #3c8dbc;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.form-group {
+  flex: 1;
+}
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.btn-save {
+  background: #007bff;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Detail View */
+.detail-section h4 {
+  color: #3c8dbc;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.highlight-text {
+  color: #dd4b39;
+  font-weight: bold;
+}
+.date-row {
+  display: flex;
+  gap: 40px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.pagination a.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.pagination a:hover {
+  background: #eee;
+}
+/* ... Các CSS cũ giữ nguyên ... */
+
+/* BUTTONS DUYỆT GIA HẠN */
+.btn-approve-req {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+.btn-approve-req:hover {
+    background-color: #218838;
+}
+
+.btn-reject-req {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+.btn-reject-req:hover {
+    background-color: #c82333;
+}

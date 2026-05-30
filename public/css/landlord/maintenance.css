@@ -1,0 +1,370 @@
+/* --- CSS TRANG BẢO TRÌ --- */
+
+/* 1. Toolbar */
+.toolbar-container {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 3px solid #3c8dbc;
+}
+
+/* Tab trạng thái */
+.status-tabs {
+  display: flex;
+  gap: 8px;
+}
+.tab-btn {
+  border: none;
+  background: #f4f6f9;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.2s;
+  outline: none;
+}
+.tab-btn:hover {
+  background: #e9ecef;
+  color: #333;
+}
+.tab-btn.active {
+  background: #7bc6f2;
+    color: #fff;
+  box-shadow: 0 2px 4px rgba(60, 141, 188, 0.3);
+}
+#tab-pending.active {
+    background: #f39c12;
+}
+#tab-done.active {
+    background: #2ecc71;
+}
+
+.counter {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 5px;
+  color: white;
+}
+.counter.red {
+  background: #dd4b39;
+}
+.counter.blue {
+  background: #00c0ef;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  width: 300px;
+}
+.search-box i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+  z-index: 2;
+}
+.search-box input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px !important;
+  padding-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+.search-box input:focus {
+  border-color: #3c8dbc;
+}
+
+/* 2. Table */
+.table-container {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-table thead {
+  background-color: #7bc6f2;
+  border-bottom: 2px solid #ddd;
+}
+.data-table th {
+  padding: 12px 10px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
+.data-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #555;
+  vertical-align: middle;
+}
+
+/* Badges */
+.room-tag {
+  font-weight: bold;
+  color: #3c8dbc;
+  background: #e3f2fd;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.badge-level {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.badge-level.high {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+.badge-level.medium {
+  background: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ffe0b2;
+}
+.badge-level.low {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.badge-status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+}
+.badge-status.pending {
+  background: #f39c12;
+  color: white;
+}
+.badge-status.processing {
+  background: #00c0ef;
+  color: white;
+}
+.badge-status.done {
+  background: #00a65a;
+  color: white;
+}
+
+/* Icon Buttons */
+.btn-icon {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 6px 8px;
+  transition: 0.2s;
+}
+.btn-edit {
+  color: #f39c12;
+}
+.btn-edit:hover {
+  background: #fff3e0;
+  border-radius: 3px;
+}
+.btn-icon.btn-delete {
+  background: transparent;
+  color: #dc3545;
+  border: none;
+  padding: 6px 8px;
+}
+.btn-icon.btn-delete:hover {
+  background-color: #f8d7da;
+  color: #a71d2a;
+  border-radius: 4px;
+}
+.btn-icon.btn-view:hover {
+    background-color: #e3f2fd;
+    border-radius: 3px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s;
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  width: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: slideIn 0.3s;
+}
+.modal-header {
+  background: #3c8dbc;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.close-btn {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+.form-group {
+  flex: 1;
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+.btn-save {
+  background: #00a65a;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-delete {
+  background: #dd4b39;
+}
+.btn-delete:hover {
+  background: #c52d1d;
+}
+.modal-footer .btn-delete {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.modal-footer .btn-delete:hover {
+  background-color: #c82333;
+}
+.btn-cancel {
+  background: #ccc;
+  color: #333;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* STYLE CHO MODAL VIEW DETAIL */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.detail-item {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+.detail-images {
+    margin-top: 20px;
+}
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+.gallery-item {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+.loading-spinner {
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(-50px); }
+  to { transform: translateY(0); }
+}

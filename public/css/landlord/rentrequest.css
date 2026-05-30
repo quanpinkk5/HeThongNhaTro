@@ -1,0 +1,244 @@
+/* --- CSS RIÊNG CHO TRANG YÊU CẦU THUÊ --- */
+
+/* 1. THANH LỌC (TOP BAR) */
+.filter-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.filter-item {
+  background: #fff;
+  padding: 0 15px;
+  height: 45px;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  border: 1px solid #ddd;
+}
+.filter-item i {
+  color: #777;
+}
+.filter-item input,
+.filter-item select {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  background: transparent;
+}
+
+/* 2. LAYOUT CHIA 2 CỘT */
+.request-layout {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: 20px;
+  height: calc(100vh - 180px); /* Fill chiều cao màn hình */
+}
+
+/* --- CỘT TRÁI: DANH SÁCH --- */
+.request-list-box {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid #3c8dbc;
+}
+
+.box-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  background: #f9f9f9;
+}
+.box-header h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.list-wrapper {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.request-table th {
+  position: sticky;
+  top: 0;
+  background: #7bc6f2;
+  z-index: 10;
+  padding: 10px;
+  text-align: left;
+  font-size: 12px;
+  color: #555;
+  font-weight: bold;
+  border-radius: 4%;
+}
+.request-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+.request-table tr:hover {
+  background: #f0f0f0;
+}
+.request-table tr.active-row {
+  background: #e3f2fd;
+  border-left: 4px solid #3c8dbc;
+}
+
+/* Badge trạng thái nhỏ */
+.badge-pending {
+  background: #f39c12;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+.badge-approved {
+  background: #00a65a;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+.badge-cancelled {
+  background: #dd4b39;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* --- CỘT PHẢI: CHI TIẾT --- */
+.request-detail-box {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid #00c0ef;
+  height: 100%; /* Full height parent */
+}
+
+.detail-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail-header h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+.status-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.detail-body {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.info-section {
+  margin-bottom: 25px;
+}
+.info-section h4 {
+  font-size: 15px;
+  color: #3c8dbc;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 5px;
+}
+.info-grid {
+  display: grid;
+  gap: 10px;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 5px;
+}
+.info-row .label {
+  color: #777;
+  font-size: 14px;
+}
+.info-row .value {
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+.info-row .link-color {
+  color: #3c8dbc;
+  font-weight: bold;
+}
+
+/* Nút hành động ở dưới cùng */
+.detail-actions {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.btn-action {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-reject {
+  background: #dd4b39;
+}
+.btn-reject:hover {
+  background: #d73925;
+}
+
+.btn-approve {
+  background: #00a65a;
+}
+.btn-approve:hover {
+  background: #008d4c;
+}
+
+/* Alert */
+.alert {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+}
+.alert-success {
+  background: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+.alert-danger {
+  background: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
