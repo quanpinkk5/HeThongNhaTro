@@ -59,6 +59,7 @@
                         <div class="form-group"><label>Số tầng</label><input type="number" name="floors" value="1" min="1" required></div>
                         <div class="form-group"><label>Tổng phòng</label><input type="number" disabled placeholder="0"></div>
                     </div>
+                    <div class="error-message" style="color: #d9534f; font-size: 14px; margin-bottom: 10px; display: none;"></div>
                     <div class="modal-footer"><button type="button" class="btn-cancel add-close">Hủy</button><button type="submit" class="btn-save">Lưu</button></div>
                 </form>
             </div>
@@ -82,6 +83,7 @@
                         <div class="form-group"><label>Số tầng</label><input type="number" name="floors" id="edit_floors" required></div>
                         <div class="form-group"><label>Tổng phòng</label><input type="number" id="edit_rooms" disabled style="background: #eee;"></div>
                     </div>
+                    <div class="error-message" style="color: #d9534f; font-size: 14px; margin-bottom: 10px; display: none;"></div>
                     <div class="modal-footer"><button type="button" class="btn-cancel edit-close">Hủy</button><button type="submit" class="btn-save">Cập nhật</button></div>
                 </form>
             </div>

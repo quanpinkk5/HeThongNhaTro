@@ -1,0 +1,27 @@
+{
+  "name": "qlpt_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quanpinkk5/HeThongNhaTro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/quanpinkk5/HeThongNhaTro/issues"
+  },
+  "homepage": "https://github.com/quanpinkk5/HeThongNhaTro#readme",
+  "devDependencies": {
+    "cypress": "^15.17.0"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.14"
+  }
+}

@@ -42,10 +42,42 @@ switch ($action) {
         $address = $_POST['address'] ?? '';
         $floors = $_POST['floors'] ?? 0;
 
-        if ($model->checkCodeExists($code, $landlord_id)) {
-            echo json_encode(["status" => "error", "message" => "Mã tòa nhà '$code' đã tồn tại! Vui lòng chọn mã khác."]);
+        // Validate mã tòa
+        if (empty($code)) {
+            echo json_encode([
+                "status" => "error",
+                "message" => "Mã tòa nhà không được để trống!"
+            ]);
             exit;
         }
+
+        // Validate tên tòa
+        if (empty($name)) {
+            echo json_encode([
+                "status" => "error",
+                "message" => "Tên tòa nhà không được để trống!"
+            ]);
+            exit;
+        }
+
+        // Validate số tầng
+        if ($floors <= 0) {
+            echo json_encode([
+                "status" => "error",
+                "message" => "Số tầng phải lớn hơn 0!"
+            ]);
+            exit;
+        }
+
+        // Kiểm tra trùng mã
+        if ($model->checkCodeExists($code, $landlord_id)) {
+            echo json_encode([
+                "status" => "error",
+                "message" => "Mã tòa nhà '$code' đã tồn tại!"
+            ]);
+            exit;
+        }
+
 
         if ($model->add($landlord_id, $code, $name, $address, $floors)) {
             echo json_encode(["status" => "success", "message" => "Thêm tòa nhà thành công!"]);

@@ -20,7 +20,7 @@ $action = $_REQUEST['action'] ?? 'get_list';
 if ($action === 'get_list') {
     $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
     $limit = isset($_GET['limit']) ? max(1, (int)$_GET['limit']) : 8;
-    $keyword = $_GET['keyword'] ?? '';
+    $keyword = trim($_GET['keyword'] ?? '');
     $offset = ($page - 1) * $limit;
 
     $totalRows = $model->getTotal($landlord_id, $keyword);

@@ -38,6 +38,33 @@ switch ($action) {
         break;
 
     case 'add':
+        $title = trim($_POST['title']);
+        $price = (float)$_POST['price'];
+        $area = (float)$_POST['area'];
+
+        if ($price <= 0) {
+            echo json_encode([
+                "status" => "error",
+                "message" => "Giá phòng phải lớn hơn 0."
+            ]);
+            exit;
+        }
+
+        if ($area <= 0) {
+            echo json_encode([
+                "status" => "error",
+                "message" => "Diện tích phải lớn hơn 0."
+            ]);
+            exit;
+        }
+
+        if (empty($title)) {
+            echo json_encode([
+                "status" => "error",
+                "message" => "Tên phòng không được để trống."
+            ]);
+            exit;
+        }
         $room_id = $model->addRoom($_POST['building_id'], $landlord_id, $_POST['title'], $_POST['price'], $_POST['area'], $_POST['description']);
         if ($room_id) {
             if (isset($_POST['services'])) $model->addRoomServices($room_id, $_POST['services']);

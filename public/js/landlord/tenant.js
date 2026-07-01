@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==== HÀM TIỆN ÍCH ====
 function debounce(func, timeout = 300){
     let timer;
-    return (...args) => {
+    return function(...args) { // Đổi từ (...args) => sang function(...args)
         clearTimeout(timer);
         timer = setTimeout(() => { func.apply(this, args); }, timeout);
     };
